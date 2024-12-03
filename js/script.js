@@ -21,8 +21,10 @@ users.map((user)=>{
     }
     
 })
+console.log(activeUsers);
+
+
 activeUsers.map((item)=>{
-    
     
     ActiveUsename = document.querySelector('.ActiveUsename');
     ActiveUsename.innerHTML +=`
@@ -46,6 +48,8 @@ for(let n = 0 ; n < itemArry.length ; n++){
     totalNumber += itemArry[n] / item.scores.length;
 }
 
+console.log(totalNumber);
+
 item.averageScore = totalNumber;
 let AvScore = document.querySelector('.AvScore');
 
@@ -68,6 +72,7 @@ AvScore.innerHTML += `
 const topPerformer = activeUsers.reduce((top, user) => {
     return !top || user.averageScore > top.averageScore ? user : top;
 }, null);
+console.log(topPerformer);
 
 
 let HighPerformer = document.querySelector('.HighPerformer');
@@ -96,6 +101,18 @@ users.map((AgeGroup)=>{
     }
 })
 // age group end
+
+// let checkArray = Array.from(activeUsers);
+
+let  Output = {
+    activeUsers : [activeUsers],
+    topPerformer: [topPerformer],
+    ageGroups: [ageGroups]
+}
+
+console.log(Output);
+
+return(Output)
 
 
 }
